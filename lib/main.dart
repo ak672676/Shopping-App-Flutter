@@ -3,6 +3,7 @@ import 'package:learning_flutter/pages/home_page.dart';
 import 'package:learning_flutter/pages/login_page.dart';
 import "package:google_fonts/google_fonts.dart";
 import 'package:learning_flutter/utils/routes.dart';
+import 'package:learning_flutter/widgets/themes.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,13 +17,11 @@ class MyApp extends StatelessWidget {
     int days = 20;
     return MaterialApp(
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-          fontFamily: GoogleFonts.lato().fontFamily),
-      darkTheme: ThemeData(brightness: Brightness.dark),
-      // debugShowCheckedModeBanner: false,
+      theme: MyTheme.lightTheme,
+      darkTheme: MyTheme.darkTheme,
+      debugShowCheckedModeBanner: false,
       routes: {
-        "/": (context) => LoginPage(),
+        "/": (context) => HomePage(),
         MyRoutes.HomeRoute: (context) => HomePage(),
         MyRoutes.LoginRoute: (context) => LoginPage()
       },
